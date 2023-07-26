@@ -1,27 +1,32 @@
-import React from "react";
-import "./styles/Cards.css";
+import React from 'react'
+import './styles/Cards.css'
+
+
 
 const Cards = ({ productData }) => {
-  console.log(productData);
-  return (
-    <>
-      <div className="Main-Card-Container">
-        {productData.products.map((product) => (
-          <div className="Card-Container">
-            <div className="Card-image">
-              {" "}
-              <img src={product.thumbnail} alt="IMG" />
-            </div>
-            <h5>{product.brand}</h5>
-            <h5>{product.title}</h5>
-            <p>{product.description}</p>
-            <p>{product.price}</p>
-            <p>{product.rating}</p>
-          </div>
-        ))}
-      </div>
-    </>
-  );
-};
+    return (
+        <div className='Main-Container'>
+            {
+                productData.map((product) => {
+                    return (
+                        <>
+                            {/* {console.log(product.id)} */}
+                            <div key={product.id} className='Card-Container' >
+                        <h5> { product.title }</h5 >
+                        <h5>{product.brand}</h5>
+                        <p>{product.discountPercentage}</p>
+                        <p>{product.price}</p>
+                        <p>{product.description}</p>
+                         </div >
+                    </>
+                    )
+                    
+                  
 
-export default Cards;
+                })
+            }
+        </div>
+    )
+}
+
+export default Cards
