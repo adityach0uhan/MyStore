@@ -1,0 +1,64 @@
+:root{
+    --navbarColor: rgb(113, 189, 116);
+}
+nav{
+    width: 100vw;
+    height: 100px;
+    background-color:var(--navbarColor);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+nav ul{
+    padding: 0px 20px;
+    display: flex;
+    width: fit-content;
+    align-items: center;
+}
+
+nav ul li{
+    list-style: none;
+    margin: 30px;
+
+}
+nav button{
+    display: none;
+}
+
+@media screen and (max-width: 780px) {
+    
+    nav{
+        display: flex;
+        padding: 0px 20px;
+    }
+
+    nav ul{
+        margin: 130px 0px 0px 0px;
+        background-color: var(--navbarColor);
+        width: max-content + 100px;
+        padding: 30px 30px 0px 0px;
+        justify-items: center;
+        flex-direction: column;
+        
+    }
+    nav ul li{
+        height: fit-content;
+        width: 100px;
+        padding: 5px;
+        margin: 5px;
+        /* display:none ; */
+    }
+    
+    nav button{
+        display: block;
+        margin: 0px 40px 0px 0px;
+    }
+    .navBarHide{
+        display: none;
+    }
+    .navBarShow{
+        display: flex;
+    }
+
+  }
