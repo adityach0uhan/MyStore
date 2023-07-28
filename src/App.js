@@ -18,9 +18,10 @@ function App() {
   }
 
   useEffect(() => {
-
     getData();
-
+    return () => {
+      
+    }
   }, [])
 
   return (
