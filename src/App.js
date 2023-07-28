@@ -24,11 +24,10 @@ function App() {
   }, [])
 
   const FilterItem= function FilterItem(item) {
-    const FilteredList = item.filter((currentItem => {
-      if (productData.product.category === currentItem) {
-        
-        return setProductData ==FilteredList;
-      }
+    const FilteredList = setProductData.filter((item => {
+      if (productData.product.category === item) {
+        return setProductData(FilteredList);
+      } 
     }))
   }
   return (
