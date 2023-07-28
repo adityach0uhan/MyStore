@@ -1,15 +1,21 @@
 import React from 'react'
 import './styles/Cards.css'
+import NavBar from './NavBar'
 
 
 
 const Cards = ({ productData }) => {
+
+
     return (
         <div className='Main-Container'>
             {
                 productData.map((product) => {
+                   
+
                     return (
                         <>
+                            {console.log(product)}
                             <div key={product.id} className='Card-Container' >
                                 <div className='Card-Image-Container'><img src={product.images[0]} alt="img" /> </div>
                                 <div className='Product-Details'>

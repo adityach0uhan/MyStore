@@ -20,13 +20,20 @@ function App() {
   useEffect(() => {
     getData();
     return () => {
-      
     }
   }, [])
 
+  const FilterItem= function FilterItem(item) {
+    const FilteredList = item.filter((currentItem => {
+      if (productData.product.category === currentItem) {
+        
+        return setProductData ==FilteredList;
+      }
+    }))
+  }
   return (
     <>
-      <NavBar />
+      <NavBar FilterItem={FilterItem} />
       <Cards productData={productData} />
     </>
   );

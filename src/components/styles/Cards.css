@@ -3,16 +3,18 @@
     z-index: 5;
     height: fit-content;
     width: fit-content;
-    background-color: cadetblue;
+    background-color: rgb(157, 175, 255);
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
 }
 
 .Card-Container{
+    border-radius: 15px;
     /* width: 20%; */
+    border: 2px solid rgb(175, 175, 175);
     height:400px;
     overflow: hidden;
-    background-color: yellow;
+    background-color: rgb(8, 121, 96);
     margin: 10px;
     /* padding: 5px; */
     align-items: center;
