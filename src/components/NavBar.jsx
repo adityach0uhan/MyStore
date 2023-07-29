@@ -7,13 +7,16 @@ const NavBar = ({ FilterItem }) => {
   function ShowMenu() {
     isNotActive(!isActive);
   }
+  // FilterItem("All");
+  
   return (
-    <>
+    <> 
+      
       <nav>
         <span className="Brand-Container">MyStore</span>
-        <button onClick={ShowMenu}>ClickMEnu</button>
+        <button onClick={ShowMenu}><i className="fa-solid fa-bars"></i></button>
         <ul className={isActive ? "navBarShow" : "navBarHide"}>
-          <li onClick={() => FilterItem("All")}>All</li>
+          <li onClick={() => FilterItem("All")}>All Products</li>
           <li onClick={() => FilterItem("smartphones")}>Mobiles</li>
           <li onClick={() => FilterItem("laptops")}>Laptops</li>
           <li onClick={() => FilterItem("fragrances")}>fragrances</li>

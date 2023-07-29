@@ -15,12 +15,11 @@ function App() {
       })
       .catch((error) => console.error(error));
   }
-
   useEffect(() => {
     getData();
     return () => {};
   }, []);
-
+  
   const FilterItem = (category) => {
     if (category === "All") {
       setFilteredData(productData);
@@ -31,7 +30,6 @@ function App() {
       setFilteredData(filteredData);
     }
   };
-
   return (
     <>
       <NavBar FilterItem={FilterItem} />
