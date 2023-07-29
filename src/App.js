@@ -1,39 +1,41 @@
-import NavBar from './components/NavBar';
-import Cards from './components/Cards';
-import { useEffect, useState } from 'react';
-import './App.css';
+import NavBar from "./components/NavBar";
+import Cards from "./components/Cards";
+import { useEffect, useState } from "react";
+import "./App.css";
 
 function App() {
-
-
   const [productData, setProductData] = useState([]);
+  const [filteredData, setFilteredData] = useState(productData);
 
   function getData() {
-    fetch('https://dummyjson.com/products')
-      .then(res => res.json())
-      .then(data => {
-        setProductData(data.products)
+    fetch("https://dummyjson.com/products")
+      .then((res) => res.json())
+      .then((data) => {
+        setProductData(data.products);
       })
-      .catch(error => console.error(error));
+      .catch((error) => console.error(error));
   }
 
   useEffect(() => {
     getData();
-    return () => {
-    }
-  }, [])
+    return () => {};
+  }, []);
 
-  const FilterItem= function FilterItem(item) {
-    const FilteredList = setProductData.filter((item => {
-      if (productData.product.category === item) {
-        return setProductData(FilteredList);
-      } 
-    }))
-  }
+  const FilterItem = (category) => {
+    if (category === "All") {
+      setFilteredData(productData);
+    } else {
+      const filteredData = productData.filter(
+        (item) => item.category === category
+      );
+      setFilteredData(filteredData);
+    }
+  };
+
   return (
     <>
       <NavBar FilterItem={FilterItem} />
-      <Cards productData={productData} />
+      <Cards productData={filteredData} />
     </>
   );
 }
