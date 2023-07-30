@@ -12,6 +12,7 @@ function App() {
       .then((res) => res.json())
       .then((data) => {
         setProductData(data.products);
+        setFilteredData(data.products);
       })
       .catch((error) => console.error(error));
   }
@@ -19,7 +20,7 @@ function App() {
     getData();
     return () => {};
   }, []);
-  
+
   const FilterItem = (category) => {
     if (category === "All") {
       setFilteredData(productData);
